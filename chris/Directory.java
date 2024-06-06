@@ -74,17 +74,67 @@ public class Directory {
   public short ialloc(String filename) {
     // filename is the one of a file to be created.
     // allocates a new inode number for this filename
-    return 0;
+
+    // check if the file name is too long
+    if (filename.length() > maxChars) {
+      // print an error message
+      SysLib.cerr("Error: Directory.ialloc(): File name '" + filename +
+                  "'' is too long, max length is " + maxChars +
+                  " characters.\n");
+      return -1;
+    }
+
+    // loop through the fsize[] array to find an empty spot
+    for (int i = 0; i < fsize.length; i++) {
+      // if the file size is 0, the spot is empty
+      if (fsize[i] == 0) {
+        // set the file size to the length of the file name
+        fsize[i] = filename.length();
+        // copy the characters from the file name to the fnames array
+        filename.getChars(0, fsize[i], fnames[i], 0);
+        // return the inode number
+        return (short)i;
+      }
+    }
+    // if there are no empty spots, return -1
+    return -1;
   }
 
   public boolean ifree(short iNumber) {
     // deallocates this inumber (inode number)
     // the corresponding file will be deleted.
+
+    // check if the inode number is valid
+    if (iNumber < 0 || iNumber >= fsize.length) {
+      // print an error message
+      SysLib.cerr("Error: Directory.ifree(): Invalid inode number '" + iNumber +
+                  "'\n");
+      return false;
+    }
+
+    // set the file size to 0
+    fsize[iNumber] = 0;
     return true;
   }
 
   public short namei(String filename) {
     // returns the inumber corresponding to this filename
-    return 0;
+
+    // loop through the fnames[] array to find the file name
+    for (int i = 0; i < fnames.length; i++) {
+      // create a new string from the fnames array
+      String fname = new String(fnames[i], 0, fsize[i]);
+      // if the file name matches the given file name...
+      if (fname.equals(filename)) {
+        // return the inode number
+        return (short)i;
+      }
+    }
+
+    // if the file name is not found...
+    // print an error message
+    SysLib.cerr("Error: Directory.namei(): File name '" + filename +
+                "' not found\n");
+    return -1;
   }
 }
