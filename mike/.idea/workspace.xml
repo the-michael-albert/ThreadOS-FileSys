@@ -5,17 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c07a4a7-6dac-417e-8f6e-1dc15754afc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Cache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Kernel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Test4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Inode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DISK" beforeDir="false" afterPath="$PROJECT_DIR$/DISK" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Cache$Entry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P1/Cache$Entry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Cache.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P1/Cache.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Boot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Cache$Entry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Cache.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/P1/DISK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Kernel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/P1/Kernel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Scheduler_rr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scheduler_rr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Directory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Disk.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/FileSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/FileTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/FileTableEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Inode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Kernel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Loader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/QueueNode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Scheduler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Scheduler_rr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/SuperBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/SyncQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/SysLib.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/TCB.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Test2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Test2b.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/P1/Test4.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +53,15 @@
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="98" />
@@ -83,23 +103,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;A:/malbert/Documents/Stickies-be/quarkus&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "last_opened_file_path": "C:/devProj/ThreadOS-FileSys/mike",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="A:\malbert\Documents\Github\P1\src" />
@@ -177,6 +197,7 @@
       <workItem from="1714980487325" duration="864000" />
       <workItem from="1715057378236" duration="30000" />
       <workItem from="1716673053149" duration="16340000" />
+      <workItem from="1717630632695" duration="1896000" />
     </task>
     <servers />
   </component>
