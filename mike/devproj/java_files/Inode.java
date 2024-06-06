@@ -61,6 +61,28 @@ public class Inode {
         SysLib.short2bytes( indirect, data, offset ); // write indirect pointer
         offset += 2; // 32 bytes written at this point (iNodeSize)
 
-        
+        int blockNumber = 1 + iNumber / 16;
+        byte[] readData = new byte[Disk.blockSize];
+        SysLib.rawread( blockNumber, readData );
+
+        offset = ( iNumber % pointerCount ) * iNodeSize; // offset to the i-th inode
+        System.arraycopy( data, 0, readData, offset, iNodeSize ); // copy data to readData
+        SysLib.rawwrite( blockNumber, readData ); // write back to disk
+    }
+
+    int findTargetBlock( int offset ) {
+        int targetBlock = offset / Disk.blockSize;
+        if ( targetBlock < directSize ) { //if target block is in the direct pointers
+            return direct[targetBlock]; // return direct pointer
+        } else if ( indirect < 0 ) { // failsafe if indirect pointer is not set
+            return -1;
+        } else { // search indirect pointers
+            byte[] data = new byte[Disk.blockSize];
+            SysLib.rawread( indirect, data );
+            return SysLib.bytes2short( 
+                data,  // data
+                ( targetBlock - directSize ) * 2 // offset is the block number
+            ); 
+        }
     }
 }
