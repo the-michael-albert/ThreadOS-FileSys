@@ -21,6 +21,10 @@ public class Inode {
         indirect = -1;
     }
 
+    /**
+     * Retrieve the inode from disk
+     * @param iNumber the inode number to retrieve from disk
+     */
     Inode( short iNumber ) {                       // retrieving inode from disk
         int blockNumber = 1 + iNumber / 16;
         byte[] data = new byte[Disk.blockSize];
@@ -45,6 +49,10 @@ public class Inode {
     }
 
 
+    /**
+     * Save the inode to disk
+     * @param iNumber the inode number
+     */
     void toDisk( short iNumber ) {                  // save to disk as the i-th inode
         byte[] data = new byte[Disk.blockSize];
         int offset = 0;
@@ -73,6 +81,11 @@ public class Inode {
         SysLib.rawwrite( blockNumber, readData ); // write back to disk
     }
 
+    /**
+     * Find the target block of the inode
+     * @param offset the offset of the block
+     * @return the target block number
+     */
     int findTargetBlock( int offset ) {
         int destBlock = offset / Disk.blockSize;
         if ( destBlock < directSize ) { //if target block is in the direct pointers
@@ -127,6 +140,11 @@ public class Inode {
         }
     }
 
+    /**
+     * Unregister a target block from the inode
+     * @param offset the offset of the block
+     * @return the target block number
+     */
     boolean registerIndexBlock( short indexBlockNum ) {
         if ( indirect != -1 ) { // if indirect pointer is already set
             return false; // return false (fail)
@@ -142,6 +160,10 @@ public class Inode {
         }
     }
 
+    /**
+     * Unregister the index block
+     * @return the data of the index block
+     */
     byte[] unregisterIndexBlock() {
         if ( indirect < 0 ) { // if indirect pointer is not set
             return null; // return null
