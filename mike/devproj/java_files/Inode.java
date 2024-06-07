@@ -1,7 +1,7 @@
 public class Inode {
-    private final static int iNodeSize = 32;       // fix to 32 bytes
-    private final static int directSize = 11;      // # direct pointers
-    private final static int pointerCount = 16;      // block size
+    public final static int iNodeSize = 32;       // fix to 32 bytes
+    public final static int directSize = 11;      // # direct pointers
+    public final static int pointerCount = 16;      // block size
 
     public static final int ERROR_BLOCK_SET = -1;
     public static final int ERROR_BLOCK_NOT_SET = -2;
@@ -48,6 +48,14 @@ public class Inode {
         indirect = SysLib.bytes2short( data, offset );
     }
 
+
+    /**
+     * Save the inode to disk
+     * @param iNumber the inode number to save to disk
+     */
+    void toDisk(int iNumber){
+        toDisk((short)iNumber);
+    }
 
     /**
      * Save the inode to disk
