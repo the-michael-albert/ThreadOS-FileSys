@@ -5,30 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c07a4a7-6dac-417e-8f6e-1dc15754afc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Inode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bruh/FinalProject/src/Boot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bruh/FinalProject/src/Kernel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Boot.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Cache$Entry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Cache.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/DISK" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Directory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Disk.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/FileSystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/FileTable.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/FileTableEntry.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Inode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Kernel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Loader.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/QueueNode.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Scheduler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Scheduler_rr.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/SuperBlock.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/SyncQueue.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/SysLib.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/TCB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Test2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Test2b.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/P1/Test4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/devproj/java_files/Inode.java" beforeDir="false" afterPath="$PROJECT_DIR$/devproj/java_files/Inode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devproj/out/Inode.class" beforeDir="false" afterPath="$PROJECT_DIR$/devproj/out/Inode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/devproj/out/SuperBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/devproj/out/SuperBlock.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
