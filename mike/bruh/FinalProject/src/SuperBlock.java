@@ -79,7 +79,7 @@ public class SuperBlock {
         // write the superblock to disk (all 16 bytes of it)
         SysLib.rawwrite( 0, superBlock );
 
-        SysLib.cerr( "synced superblock \n" );
+        SysLib.cerr( "synced superblock" );
     }
 
 
