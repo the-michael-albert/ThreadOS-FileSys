@@ -82,5 +82,37 @@ public class SuperBlock {
         SysLib.cerr( "synced superblock \n" );
     }
 
+    /**
+     * Get a free block from the free list
+     * @return the block number of the free block 
+     */
+    int getFreeBlock() {
+        int freeBlock = this.freeList;
+        if (freeBlock != -1) {
+            byte[] block = new byte[Disk.blockSize];
+            SysLib.rawread(freeBlock, block);
+            this.freeList = SysLib.bytes2int(block, 0);
+            SysLib.int2bytes(0, block, 0);
+            SysLib.rawwrite(freeBlock, block);
+        }
+        return freeBlock;
+    }
+
+    /**
+     * Return a block to the free list
+     * @param blockNumber the block number to return
+     * @return true if the block was returned, false otherwise
+     */
+    boolean returnBlock(int blockNumber) {
+        if (blockNumber < 0) {
+            return false;
+        }
+        byte[] block = new byte[Disk.blockSize];
+        SysLib.int2bytes(this.freeList, block, 0);
+        SysLib.rawwrite(blockNumber, block);
+        this.freeList = blockNumber;
+        return true;
+    }
+
 
 }
