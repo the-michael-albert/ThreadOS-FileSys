@@ -1,0 +1,1 @@
+./compile.sh ./java_files/ ./class_files/ "Boot"
