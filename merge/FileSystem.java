@@ -26,9 +26,7 @@ public class FileSystem {
         close( dirEnt );
     }
 
-    /**
-     * Synchronize the directory and superblock with the disk.
-     */
+    //DONE
     void sync( ) {
         // directory synchronizatioin
         FileTableEntry dirEnt = open( "/", "w" );
@@ -40,11 +38,7 @@ public class FileSystem {
         superblock.sync( );
     }
 
-    /**
-     * Format the disk with the specified number of files.
-     * @param files the number of files to format the disk with
-     * @return true if the disk was formatted successfully, false otherwise
-     */
+    //DONE
     boolean format( int files ) {
         // wait until all filetable entries are destructed
         while ( filetable.fempty( ) == false ){} 
@@ -62,12 +56,7 @@ public class FileSystem {
         return true;
     }
 
-    /**
-     * Open a file with the specified filename and mode.
-     * @param filename the name of the file to open
-     * @param mode the mode to open the file in (r, w, etc.)
-     * @return the file table entry for the file
-     */
+    //DONE
     FileTableEntry open( String filename, String mode ) {
         FileTableEntry ftEnt = filetable.falloc( filename, mode );
         if ( mode == "w" ) {
@@ -78,12 +67,8 @@ public class FileSystem {
         return ftEnt;
     }
 
-    /**
-     * Close the file table entry (like free in C)
-     * @param ftEnt the file table entry to close
-     * @return true if the file table entry was closed successfully, false otherwise
-     */
-    boolean close( FileTableEntry ftEnt ) {
+    //DONE
+    boolean close( FileTableEnty ftEnt ) {
         // filetable entry is freed
         synchronized ( ftEnt ) {
             // need to decrement count; also: changing > 1 to > 0 below
@@ -95,11 +80,7 @@ public class FileSystem {
     }
 	
 	
-    /**
-     * Get the size of the file table entry
-     * @param ftEnt the file table entry to get the size of
-     * @return the size of the file table entry (in bytes)
-     */
+    //DONE
     int fsize( FileTableEntry ftEnt ) {
         synchronized ( ftEnt ) {
             return ftEnt.inode.length;
@@ -107,12 +88,7 @@ public class FileSystem {
     }
 
 
-    /**
-     * Read from the file table entry into the buffer
-     * @param ftEnt the file table entry to read from
-     * @param buffer the buffer to read into
-     * @return the number of bytes read
-     */
+    //DONE?
     int read( FileTableEntry ftEnt, byte[] buffer ) {
         if ( ftEnt.mode == "w" || ftEnt.mode == "a" ){
             return -1;
@@ -143,12 +119,6 @@ public class FileSystem {
         }
     }
 
-    /**
-     * Write to the file table entry from the buffer
-     * @param ftEnt the file table entry to write to
-     * @param buffer the buffer to write from
-     * @return the number of bytes written
-     */
     int write( FileTableEntry ftEnt, byte[] buffer ) {
         // at this point, ftEnt is only the one to modify the inode
         if ( ftEnt.mode == "r" )
@@ -164,7 +134,7 @@ public class FileSystem {
                 if ( blockNum == -1 ) {
                     short newBlockNum = (short)superblock.getFreeBlock( );
                     // register the new block number and get operations the status code
-                    int statuscode = ftEnt.inode.registerTargetBlock( ftEnt.seekPtr, newBlockNum );
+                    int statuscode = ftEnt.inode.registerTargetBlock( ftEnt.seekPtr, newBlockNum )
                     
                     // if the block registration fails...
                     if ( statuscode == -1 ) {
@@ -225,11 +195,6 @@ public class FileSystem {
         }
     }
 
-    /**
-     * Deallocate all blocks of the file table entry
-     * @param ftEnt the file table entry to deallocate blocks from
-     * @return true if all blocks were deallocated successfully, false otherwise
-     */
     private boolean deallocAllBlocks( FileTableEntry ftEnt ) {
         if ( ftEnt.inode.count != 1 ) { // not the only one using it
             return false;
@@ -261,11 +226,7 @@ public class FileSystem {
 
 	
 	
-	/**
-     * Delete the file with the specified filename
-     * @param filename the name of the file to delete
-     * @return true if the file was deleted successfully, false otherwise
-     */
+	
     boolean delete( String filename ) {
         FileTableEntry ftEnt = open( filename, "w" );
         short iNumber = ftEnt.iNumber;
@@ -276,27 +237,14 @@ public class FileSystem {
     private final int SEEK_CUR = 1;
     private final int SEEK_END = 2;
 
-    /**
-     * Check if the offset is within the bounds of the file
-     * @param ftEnt the file table entry to check the offset for
-     * @param offset the offset to check
-     * @return true if the offset is within the bounds of the file, false otherwise
-     */
     boolean isOffsetWithinBounds( FileTableEntry ftEnt, int offset ) {
         return offset >= 0 && offset <= fsize( ftEnt );
     }
 
-    /**
-     * Seek to the specified offset in the file table entry
-     * @param ftEnt the file table entry to seek in
-     * @param offset the offset to seek to
-     * @param whence whence is the starting point in the file (SEEK_SET, SEEK_CUR, SEEK_END)
-     * @return the new seek pointer
-     */
     int seek( FileTableEntry ftEnt, int offset, int whence ) {
         synchronized ( ftEnt ) {
             if ( whence == SEEK_SET ) {
-                //offset is withing bounds of file
+                //offset is within bounds of file
                 if ( isOffsetWithinBounds( ftEnt, offset )) {
                     ftEnt.seekPtr = offset;
                 } else {
@@ -324,8 +272,7 @@ public class FileSystem {
                     " seekptr=" + ftEnt.seekPtr +
                     " whence=" + whence );
             */
-            return ftEnt.seekPtr;
 		}
+        return -1;
     }
-
 }

@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c07a4a7-6dac-417e-8f6e-1dc15754afc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/bruh/FinalProject/src/Directory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../merge/java_files/FileSystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../merge/out/Directory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../merge/out/Directory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../merge/out/Inode.class" beforeDir="false" afterPath="$PROJECT_DIR$/../merge/out/Inode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../merge/out/SuperBlock.class" beforeDir="false" afterPath="$PROJECT_DIR$/../merge/out/SuperBlock.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bruh/FinalProject/src/FileSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bruh/FinalProject/src/FileTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bruh/FinalProject/src/FileTableEntry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bruh/FinalProject/src/TestAwesome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../merge/java_files/FileSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../merge/java_files/FileSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../merge/java_files/FileTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../merge/java_files/FileTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../merge/out/FileSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/../merge/out/FileSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../merge/out/FileTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../merge/out/FileTable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bruh/FinalProject/out/production/FinalProject/Directory.class" beforeDir="false" afterPath="$PROJECT_DIR$/bruh/FinalProject/out/production/FinalProject/Directory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bruh/FinalProject/out/production/FinalProject/FileSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/bruh/FinalProject/out/production/FinalProject/FileSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bruh/FinalProject/out/production/FinalProject/FileTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/bruh/FinalProject/out/production/FinalProject/FileTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bruh/FinalProject/out/production/FinalProject/FileTableEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/bruh/FinalProject/out/production/FinalProject/FileTableEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bruh/FinalProject/src/Directory.java" beforeDir="false" afterPath="$PROJECT_DIR$/bruh/FinalProject/src/Directory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bruh/FinalProject/src/Inode.java" beforeDir="false" afterPath="$PROJECT_DIR$/bruh/FinalProject/src/Inode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bruh/FinalProject/src/SuperBlock.java" beforeDir="false" afterPath="$PROJECT_DIR$/bruh/FinalProject/src/SuperBlock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

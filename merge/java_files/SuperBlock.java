@@ -56,7 +56,7 @@ public class SuperBlock {
                 block[j] = 0;
             }
 
-            SysLib.cerr( "writing block [free]" + i + " to disk\n" );
+//            SysLib.cerr( "writing block [free]" + i + " to disk\n" );
 
             // write the block to the disk
             SysLib.int2bytes( i + 1, block, 0 );
@@ -113,6 +113,7 @@ public class SuperBlock {
         this.freeList = blockNumber;
         return true;
     }
+    
 
 
 }
